@@ -1,0 +1,27 @@
+<title>{{title}}</title>
+
+<div id="Main-Card" class="card mb-3">
+    <img class="card-img-top" src="/images/pexels-stanislav-kondratiev-2908984.jpg" width="10px" height="300px"
+        alt="Card image cap">
+    <div class="card-body" dir="rtl">
+        <h5 class="card-title">أبحر في عالم الكتب </h5>
+        <p class="card-text">ألق نظرة على الكتب المصنفة في علم النفس و التحليل، لتجد ما تبحث عنه ! </p>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+            {{#each items}}
+        <div class="col">
+            <div class="card" style="width:15rem;">
+                <img class="card-img-top" src="/images/{{this.b_pic}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.b_name}}</h5>
+                    <a href="/pages/book-detales/{{this._id}}" class="btn btn-primary">قراءة</a>
+                </div>
+            </div>
+        </div>
+            {{/each}}    
+    </div>
+</div>

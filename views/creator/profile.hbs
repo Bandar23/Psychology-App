@@ -1,0 +1,82 @@
+<meta charset="UTF-8">
+
+<div>
+    <div class="nav-admin">
+        <div class="rit">
+           <a href="/pages/creators-profile"><p>{{items.c_name}}</p><i class="far fa-user-circle fa-2x"><br/></i></a>
+        </div>
+        <div class="lft">
+            <a href="/pages/creators-logout"> <i class="fas fa-sign-out-alt fa-2x"></i></a>
+            <a href="#"><i class="far fa-bell fa-2x"></i></a>
+            <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
+        </div>
+    </div>
+   {{#each massage}}
+                <ul>
+                    <li> <div class="alert alert-success" role="alert"><b>{{this}}</b></li><br/><br/>
+                </ul>
+                {{/each}}
+    <div class="edit-profile">
+        <h3>تعديل بياناتك</h3>
+        <form action="infoEdit" method="post">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">الإيميل</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                    aria-describedby="emailHelp" value="{{items.c_email}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">الإسم</label>
+                <input type="text" class="form-control" name="name" id="exampleInputPassword1" value="{{items.c_name}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">اسم المستخدم</label>
+                <input type="text" class="form-control" name="username" id="exampleInputPassword1"
+                    value="{{items.c_username}}">
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{tocken}}">
+
+            <button type="submit" class="btn btn-primary">تغيير كلمة المرور</button>
+            <button type="submit" class="btn btn-primary">حفظ</button>
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="left-sid">
+        <ul>
+            <li><a href="/pages/creators-main" dir="rtl"><b>لوحة التحكم</b><img src="../../images/dashboard.png"></a>
+            </li>
+            <li> <a href="/pages/creators-profile" dir="rtl"><b>بياناتي</b><br /><img src="../../images/resume.png"></a>
+            </li>
+            <li><a href="/pages/creators-scientists" dir="rtl"><b>الشخصيات</b><br /><img src="../../images/design-thinking.png"></a></li>
+            <li><a href="#" dir="rtl"><b>الدراسات</b><br /><img src="../../images/creative.png"></a></li>
+            <li> <li><a href="/pages/creators-book" dir="rtl"><b>الكتب</b><br /><img src="../../images/book.png"></a></li>
+        </ul>
+    </div>
+
+    <div class="footer-creator">
+        <div class="rit">
+            <a href="/pages/creators-profile">
+            </a>
+        </div>
+        <div class="lft">
+            <a href="/pages/creators-book"><i class="fa-solid fa-book fa-2x"></i></a>
+            <a href="/pages/creators-scientists"><i class="fa-solid fa-file-contract fa-2x"></i></a>
+            <a href="/pages/creators-scientists"><i class="fa-solid fa-users fa-2x"></i></a>
+            <a href="/pages/creators-main" class="add-send"><i class="fa-solid fa-table-columns fa-2x"></i></a>
+        </div>
+    </div>
+
+
+
+</div>

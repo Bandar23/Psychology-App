@@ -1,0 +1,85 @@
+<meta charset="UTF-8">
+
+<div>
+    <div class="nav-admin">
+        <div class="rit">
+           <a href="/pages/creators-profile"><p>{{creator}}</p><i class="far fa-user-circle fa-2x"><br/></i></a>
+        </div>
+        <div class="lft">
+            <a href="/pages/creators-logout"> <i class="fas fa-sign-out-alt fa-2x"></i></a>
+            <a href="#"><i class="far fa-bell fa-2x"></i></a>
+            <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
+        </div>
+    </div>
+    <div class="newBook-form">
+        <h3>تعديل بيانات الكتاب</h3>
+
+           {{#each massage}}
+                <ul class="erroaddBook">
+                    <li>{{this}}</li>
+                </ul>
+                {{/each}}
+                
+        <form action="/pages/editbook" method="post">
+               {{#each items}}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">اسم الكتاب</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="Bname"
+                    aria-describedby="emailHelp" value="{{this.b_name}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">اسم المؤلف</label>
+                <input type="text" class="form-control" name="Rname" id="exampleInputPassword1" value="{{this.writer}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">عدد الصفحات</label>
+                <input type="number" class="form-control" name="pages" id="exampleInputPassword1"
+                    value="{{this.pages}}">
+            </div>
+
+        
+
+             <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">نبذة عن الكتاب</label>
+                <textarea type="text-area" class="form-control" name="brife" dir="rtl"  rows="50" cols="20" value="{{this.prief}}">
+                        {{this.prief}}
+                </textarea>
+            </div>
+    {{/each}}
+
+            <button type="submit" class="btn btn-primary">إضافة</button>
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="left-sid">
+        <ul>
+            <li><a href="/pages/creators-main" dir="rtl"><b>لوحة التحكم</b><img src="../../images/dashboard.png"></a>
+            </li>
+            <li> <a href="/pages/creators-profile" dir="rtl"><b>بياناتي</b><br /><img src="../../images/resume.png"></a>
+            </li>
+            <li><a href="/pages/creators-scientists" dir="rtl"><b>الشخصيات</b><br /><img src="../../images/design-thinking.png"></a></li>
+            <li><a href="#" dir="rtl"><b>الدراسات</b><br /><img src="../../images/creative.png"></a></li>
+            <li> <li><a href="/pages/creators-book" dir="rtl"><b>الكتب</b><br /><img src="../../images/book.png"></a></li>
+        </ul>
+    </div>
+
+
+
+
+</div>
+
+<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
+<script src="/public/javascripts/editorText.js"></script>

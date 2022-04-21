@@ -1,0 +1,87 @@
+<meta charset="UTF-8">
+
+<div>
+    <div class="nav-admin">
+        <div class="rit">
+            <a href="/pages/creators-profile"><i class="far fa-user-circle fa-2x"></i></a>
+        </div>
+        <div class="lft">
+            <a href="/pages/creators-logout"> <i class="fas fa-sign-out-alt fa-2x"></i></a>
+            <a href="#"><i class="far fa-bell fa-2x"></i></a>
+            <a href="#" class="add-send"><i class="fa-solid fa-plus fa-2x"></i></a>
+        </div>
+    </div>
+
+    <div class="contnet">
+
+
+        {{#if items}}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">تعديل</th>
+                    <th scope="col">حالة النشر</th>
+                    <th scope="col">أدمن</th>
+                    <th scope="col">محرر</th>
+                    <th scope="col">الايميل</th>
+                    <th scope="col">اسم المتسخدم</th>
+                    <th scope="col">اسم المحرر</th>
+                    <th scope="col">#</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {{#each items}}
+                <tr>
+                    <td><a href=""><i class="fa-solid fa-pen-to-square" style="color: red;"></i></a></td>
+                    <td style="color: green;">فعالة</td>
+                    <td>{{this.c_type}}</td>
+                    <td>{{this.author}}</td>
+                    <td>{{this.c_email}}</td>
+                    <td>{{this.c_username}}</td>
+                    <td>{{this.c_name}}</td>
+                    <th scope="row">#</th>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{else}}
+    <div style="float: right;" </div>
+        <p dir="rtl">ليس هناك عناصر قد كتبتها</p>
+    </div>
+    {{/if}}
+
+
+
+
+
+    <div class="left-sid">
+        <ul>
+            <li><a href="/pages/creators-main" dir="rtl"><b>لوحة التحكم</b><img src="../../images/dashboard.png"></a>
+            </li>
+            <li> <a href="/pages/creators-profile" dir="rtl"><b>بياناتي</b><br /><img src="../../images/resume.png"></a>
+            </li>
+            <li><a href="/pages/creators-scientists" dir="rtl"><b>الشخصيات</b><br /><img
+                        src="../../images/design-thinking.png"></a></li>
+            <li><a href="#" dir="rtl"><b>الدراسات</b><br /><img src="../../images/creative.png"></a></li>
+            <li><a href="/pages/creators-book" dir="rtl"><b>الكتب</b><br /><img src="../../images/book.png"></a></li>
+        </ul>
+    </div>
+
+     <div class="footer-creator">
+        <div class="rit">
+            <a href="/pages/creators-profile">
+            </a>
+        </div>
+        <div class="lft">
+            <a href="/pages/creators-book"><i class="fa-solid fa-book fa-2x"></i></a>
+            <a href="/pages/creators-scientists"><i class="fa-solid fa-file-contract fa-2x"></i></a>
+            <a href="/pages/creators-scientists"><i class="fa-solid fa-users fa-2x"></i></a>
+            <a href="/pages/creators-main" class="add-send"><i class="fa-solid fa-table-columns fa-2x"></i></a>
+        </div>
+    </div>
+
+
+
+</div>

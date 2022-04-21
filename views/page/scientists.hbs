@@ -1,0 +1,29 @@
+<title>{{title}}</title>
+
+<div  id="Main-Card" class="card mb-3">
+    <img class="card-img-top" src="/images/pexels-olenka-sergienko-3646172.jpg" width="10px" height="300px" alt="Card image cap">
+    <div class="card-body" dir="rtl">
+        <h5 class="card-title">كن على دراية بسير علماء النفس و أطباءه</h5>
+        <p class="card-text">حتى نكون واعياُ تماماُ فيما يخص علم نفس، فلا بد أن نكون مطلعين على أطباء علم و نفس و تحليله</p>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+            {{#each items}}
+        <div class="col">
+            <div class="card" style="width:15rem;">
+                <img class="card-img-top" src="/images/{{this.pic}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <a href="/pages/scientists-detales/{{this._id}}" class="btn btn-primary">Read</a>
+                </div>
+            </div>
+        </div>
+            {{/each}}    
+    </div>
+</div>
+

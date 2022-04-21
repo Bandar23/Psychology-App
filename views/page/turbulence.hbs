@@ -1,0 +1,32 @@
+<title>{{title}}</title>
+
+<div id="Main-Card" class="card mb-3">
+  <img class="card-img-top" src="/images/pexels-anna-shvets-4226119.jpg" width="10px" height="300px"
+    alt="Card image cap">
+  <div class="card-body" dir="rtl">
+    <h5 class="card-title">عالم من الإضطرابات</h5>
+    <p class="card-text">ستغوص هنا في عالم من الإضطرابات التي قد لا تصدق أن تكون موجودة ، و أن هناك أشخاص يعانون منها
+      ليلا نهارا ! </p>
+  </div>
+</div>
+
+<table class="table" dir="rtl">
+  <caption>List of users</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">الإضطراب</th>
+      <th scope="col">التاريخ</th>
+      <th scope="col">الناشر</th>
+    </tr>
+  </thead>
+   <tbody>
+  {{#each items}}
+    <tr>
+      <th scope="row">1</th>
+      <td><a href="/pages/subject-detales/{{this._id}}">{{this.title}}</a></td>
+      <td>{{this.Date}}</td>
+    </tr>
+{{/each}}
+  </tbody>
+</table>

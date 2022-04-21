@@ -1,0 +1,72 @@
+<meta charset="UTF-8">
+
+<div>
+  <div class="nav-admin">
+    <div class="rit">
+      <a href="/pages/creators-profile">
+        <p>{{creator}}</p><i class="far fa-user-circle fa-2x"><br /></i>
+      </a>
+    </div>
+    <div class="lft">
+      <a href="/pages/creators-logout"> <i class="fas fa-sign-out-alt fa-2x"></i></a>
+      <a href="#"><i class="far fa-bell fa-2x"></i></a>
+      <a href="#" class="add-send"><i class="fa-solid fa-plus fa-2x"></i></a>
+    </div>
+          <a href="/pages/creators-scientists"><i class="fa-solid fa-chevron-right"> القائمة السابقة </i></a>
+  </div>
+
+  <div class="contnet">
+
+{{#if Admin}}
+
+    <div class="book-details">
+   {{#each items}}
+          <h3 dir="rtl">{{this.name}}</h3><br/>
+          <p dir="rtl">{{this.content}}</p>
+            {{#if this.status}}
+              <p dir="rtl" style="color: green;">مرفوع</p>
+                <form method="post" action="/pages/DeleteScientist">
+              <input type="hidden" name="id" value="{{this._id}}">
+              <button type="submit" id="but" class="btn btn-danger" style="float: left;">حذف</button>
+             </form>
+          {{else}}
+              <form method="post" action="/pages/ApproveScientist">
+              <input type="hidden" name="id" value="{{this._id}}">
+              <button type="submit" id="but" class="btn btn-primary">رفع</button>
+             </form>
+          {{/if}}
+   {{/each}}
+</div>
+
+{{else}}
+  <div class="book-details">
+   {{#each items}}
+          <h3 dir="rtl">{{this.name}}</h3><br/>
+          <p dir="rtl">{{this.content}}</p>
+   {{/each}}
+</div>
+{{/if}}
+    
+
+
+
+
+
+
+
+ <div class="footer-creator">
+        <div class="rit">
+            <a href="/pages/creators-profile">
+            </a>
+        </div>
+        <div class="lft">
+            <a href="/pages/creators-book"><i class="fa-solid fa-book fa-2x"></i></a>
+            <a href="/pages/creators-scientists"><i class="fa-solid fa-file-contract fa-2x"></i></a>
+            <a href="/pages/creators-scientists"><i class="fa-solid fa-users fa-2x"></i></a>
+            <a href="/pages/creators-main" class="add-send"><i class="fa-solid fa-table-columns fa-2x"></i></a>
+        </div>
+    </div>
+
+
+
+</div>

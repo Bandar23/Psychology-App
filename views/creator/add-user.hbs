@@ -1,0 +1,84 @@
+<meta charset="UTF-8">
+
+<div>
+    <div class="nav-admin">
+        <div class="rit">
+            <a href="/pages/creators-profile">
+                <p>{{items.c_name}}</p><i class="far fa-user-circle fa-2x"><br /></i>
+            </a>
+        </div>
+        <div class="lft">
+            <a href="/pages/creators-logout"> <i class="fas fa-sign-out-alt fa-2x"></i></a>
+            <a href="#"><i class="far fa-bell fa-2x"></i></a>
+            <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
+        </div>
+    </div>
+    <div class="newBook-form">
+        <h3> إضافة محرر جديد</h3>
+
+          {{#each massage}}
+                <ul class="erroaddBook">
+                    <li>{{this}}</li>
+                </ul>
+                {{/each}}
+
+
+        <form action="newUser" method="post">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">اسم المحرر</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="Pname"
+                    aria-describedby="emailHelp" value="">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl"> الإيميل</label>
+                <input type="text" class="form-control" name="Pemail" id="exampleInputPassword1" value="">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">الرقم السري</label>
+                <input type="password" class="form-control" name="Pass" id="exampleInputPassword1" value="">
+            </div>
+
+             <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">تأكيد كلمة السر</label>
+                <input type="password" class="form-control" name="Pconfirme" id="exampleInputPassword1" value="">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">اسم المستخدم</label>
+                <input type="text" class="form-control" name="Pusername" id="exampleInputPassword1" value="">
+            </div>
+
+        
+            <button type="submit" class="btn btn-primary">إضافة</button>
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="left-sid">
+        <ul>
+            <li><a href="/pages/creators-main" dir="rtl"><b>لوحة التحكم</b><img src="../../images/dashboard.png"></a>
+            </li>
+            <li> <a href="/pages/creators-profile" dir="rtl"><b>بياناتي</b><br /><img src="../../images/resume.png"></a>
+            </li>
+            <li><a href="/pages/creators-scientists" dir="rtl"><b>الشخصيات</b><br /><img
+                        src="../../images/design-thinking.png"></a></li>
+            <li><a href="#" dir="rtl"><b>الدراسات</b><br /><img src="../../images/creative.png"></a></li>
+            <li>
+            <li><a href="/pages/creators-book" dir="rtl"><b>الكتب</b><br /><img src="../../images/book.png"></a></li>
+        </ul>
+    </div>
+
+
+
+
+</div>

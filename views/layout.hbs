@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Theme included stylesheets -->
+  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+  <!-- Core build with no theme, formatting, non-essential modules -->
+  <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+
+
+  <meta charset="UTF-8">
+
+</head>
+
+<body>
+  <div class="body">
+    {{#if toLogin}}
+
+    {{{body}}}
+    
+    {{else}}
+    <header class="site-header">
+      <nav>
+        <div class="dropdown">
+          <span>القائمة الرئيسية <i class="fa-solid fa-list"></i></span>
+          <div class="dropdown-content">
+            <a class="a__item" href="/">الرئيسية</a><br />
+            <a class="a__item" href="/pages/login">إنظم لنا</a><br />
+            <a class="a__item" href="/pages/book">الكتب</a><br />
+            <a class="a__item" href="/pages/turbulence">الإضطررابات </a><br />
+            <a class="a__item" href="/pages/scientists">سير العلماء</a><br />
+            <a class="a__item" href="/pages/scientists">الإختبارات و المقاييس</a><br />
+            <a class="a__item" href="/pages/about">من نحن</a><br />
+            </ul>
+          </div>
+        </div>
+        <button id="translet" type="button" class="btn btn-light" style="float: left;margin-left:10px"><i
+            class="fa-solid fa-language fa-2x"></i></button>
+        <button id="light-mode" type="button" class="btn btn-light" style="float: left;margin-left:10px"
+          onclick="toDark()"><i class="fa-solid fa-moon fa-2x"></i></i></button>
+
+        <ul>
+          <li class="nav__item"><a class="a__item" href="/pages/login">إنظم لنا</a></li>
+          <li class="nav__item"><a class="a__item" href="/pages/book">الكتب</a></li>
+          <li class="nav__item"><a class="a__item" href="/pages/turbulence">الإضطررابات </a></li>
+          <li class="nav__item"><a class="a__item" href="/pages/scientists">سير العلماء</a></li>
+          <li class="nav__item"><a class="a__item" href="/pages/scientists">الإختبارات و المقاييس</a></li>
+          <li class="nav__item"><a class="a__item" href="/pages/about">من نحن</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+    {{{body}}}
+
+    <footer class="">
+      <h5>Copyright &copy; Your Website</h5><b />
+      <div>Logo made by <a href="https://www.designevo.com/" title="Free Online Logo Maker">DesignEvo free logo
+          creator</a></div>
+    </footer>
+    <script src="/javascripts/header-3.js"></script>
+    <script src="/javascripts/sending.js"></script>
+    <script src="/javascripts/lightMode.js"></script>
+
+
+
+
+    {{/if}}
+  </div>
+
+</body>
+
+</html>
