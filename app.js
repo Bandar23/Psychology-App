@@ -23,8 +23,7 @@ var app = express();
 mongoose.connect(
   process.env.MONGODB_URI ||'mongodb://localhost:/Psychology_App',
   {
-    useNewUrlParser:true,
-    useUnifiedTopology: true
+    useNewUrlParser:true
   },(err)=>{
 
   if(err){
