@@ -402,7 +402,7 @@ footer h5{
   padding:20px;
   width:200px;
   height:100px;
-  margin-left:180px;
+  margin-left:150px;
   margin-bottom:50px;
   font-family:serif;
   font-weight: bold;
@@ -1067,6 +1067,8 @@ li a:hover{
     padding:20px;
     width:200px;
     height:100px;
+    margin-left:550px;
+
     margin-bottom:50px;
     font-family:serif;
     font-weight: bold;
