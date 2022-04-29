@@ -11,7 +11,7 @@ getUsersScientists = function (req, res, next) {
     if (error) {
       console.log(error);
     } else {
-      res.render('page/scientists', { title: 'Scientists', items: result });
+      res.render('page/scientists', { title: 'العلماء', items: result });
     }
   });
 }

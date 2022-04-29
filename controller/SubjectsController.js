@@ -10,7 +10,7 @@ getUsersSubjects = function(req,res,next){
         if(error){ 
           console.log(error);
         }else{
-          res.render('page/turbulence', {title:'Turbulence',items:reuslt});
+          res.render('page/turbulence', {title:'الدراسات و المواضيع',items:reuslt});
         }
 
     })

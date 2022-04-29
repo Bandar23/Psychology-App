@@ -38,7 +38,7 @@ router.get('/history',((req,res,next)=>{
 }));
 
 router.get('/about',((req,res,next)=>{
-res.render('page/about')
+res.render('page/about',{title:'من نكون'})
 }));
 
 
