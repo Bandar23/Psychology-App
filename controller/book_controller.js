@@ -17,7 +17,7 @@ getBooks = function(req,res,next){
      for(let i =0; i<result.length; i+=colGrid){
          BooksGrid.push(result.slice(i,i+colGrid));
      }
-     res.render('page/book', {title:'Book', items:result}); 
+     res.render('page/book', {title:'الكتب', items:result}); 
    }
 
  });
@@ -90,7 +90,7 @@ getUsersBook = function(req,res,next){
     if(error){ 
       console.log(error);
     }else{
-      res.render('page/book-detales',{title:'De-Book', items:result}); 
+      res.render('page/book-detales',{title:' تفاصيل كتاب ', items:result}); 
    }
 
  });

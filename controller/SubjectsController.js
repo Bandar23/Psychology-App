@@ -21,7 +21,7 @@ getDetaliesSubject = function(req,res,next){
     if(error){ 
       console.log(error);
     }else{
-      res.render('page/subject-details', {title:'Turbulence',items:doc});
+      res.render('page/subject-details', {title:'تفاصيل ',items:doc});
     }
   });
 }
