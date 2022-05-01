@@ -1020,6 +1020,36 @@ li a:hover{
       background-color: rgba(213, 203, 6, 0.159);
   
   }
+
+  .Scientist-title{
+    margin-left:70px;
+    margin-top:15px;
+    
+  }
+
+  #link-sc{
+    text-decoration: none;
+    margin-left:100px;
+    margin-top:15px;
+    background-color: rgba(213, 203, 6, 0.159);
+    color: #181943;
+    
+  }
+
+  #link-sc p {
+    text-decoration: none;
+    margin-left:70px;
+    margin-top:15px;
+    color: #090b81;
+    
+  }
+
+  #Scientist-border:hover{
+    width:10%;
+    margin-right:900px;
+    box-shadow: 10px 10px 5px rgba(127, 137, 140, 0.479);
+
+  }
   
   .table{
       margin-top:100px;
