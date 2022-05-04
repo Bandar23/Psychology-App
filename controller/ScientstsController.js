@@ -11,6 +11,11 @@ getUsersScientists = function (req, res, next) {
     if (error) {
       console.log(error);
     } else {
+      let ScientistsGrid =[];
+      let colGrid = 3;
+      for(let i =0; i<result.length; i+=colGrid){
+        ScientistsGrid.push(result.slice(i,i+colGrid));
+      }
       res.render('page/scientists', { title: 'العلماء', items: result });
     }
   });
