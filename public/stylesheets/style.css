@@ -1004,7 +1004,17 @@ li a:hover{
     }
   
   .container{
+
       margin-top:100px;
+  }
+
+  #container-Sc{
+    margin-top:100px;
+    width:200px;
+    display: inline-block;
+    margin:30px ;
+
+
   }
   #Main-Card{
       margin-top:100px;
@@ -1019,11 +1029,13 @@ li a:hover{
   .card-body{
       background-color: rgba(213, 203, 6, 0.159);
   
+      
   }
 
   .Scientist-title{
-    margin-left:70px;
+    margin-left:60px;
     margin-top:15px;
+
     
   }
 
@@ -1033,6 +1045,7 @@ li a:hover{
     margin-top:15px;
     background-color: rgba(213, 203, 6, 0.159);
     color: #181943;
+
     
   }
 
@@ -1040,16 +1053,14 @@ li a:hover{
     text-decoration: none;
     margin-left:70px;
     margin-top:15px;
+
     color: #090b81;
     
   }
 
   #Scientist-border:hover{
-    width:10%;
-    margin-right:900px;
+    display: inline-block;    
     box-shadow: 10px 10px 5px rgba(127, 137, 140, 0.479);
-    border: solid black 1px;
-    float: left;
 
 
 
