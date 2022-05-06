@@ -1004,13 +1004,32 @@ li a:hover{
   
   .container{
           margin-top:100px;
+        
+
   }
 
   #container-Sc{
-    margin-top:100px;
-    width:200px;
-    margin:30px ;
+    margin:10px;  
+    border: #222 solid 1px;
 
+  }
+  .cs-frame{
+    margin: 10px;
+    height:auto;
+    width:220px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  }
+
+  .cs-frame img{
+    margin:5px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+  }
+
+  .cs-frame:hover{
+    box-shadow:none;
 
   }
   #Main-Card{
@@ -1030,7 +1049,7 @@ li a:hover{
   }
 
   .Scientist-title{
-    margin-left:60px;
+    margin-left:80px;
     margin-top:15px;
 
     
@@ -1038,9 +1057,8 @@ li a:hover{
 
   #link-sc{
     text-decoration: none;
-    margin-left:100px;
+    margin-left:50px;
     margin-top:15px;
-    background-color: rgba(213, 203, 6, 0.159);
     color: #181943;
 
     
@@ -1048,16 +1066,24 @@ li a:hover{
 
   #link-sc p {
     text-decoration: none;
-    margin-left:70px;
+    margin-left:100px;
     margin-top:15px;
+    margin-bottom: 10px;
 
     color: #090b81;
     
   }
 
+  .col img{
+    margin-top:10px;
+  }
+
   #Scientist-border:hover{
-    display: inline-block;    
-    box-shadow: 10px 10px 5px rgba(127, 137, 140, 0.479);
+    box-shadow:10px 10px 10px 10px  rgba(127, 137, 140, 0.479);
+  }
+
+  #Scientist-border{
+    box-shadow:2px 2px 2px 2px  rgba(127, 137, 140, 0.479);
 
 
 
@@ -1458,8 +1484,7 @@ textarea{
   text-align: center;
   margin:20px;
   padding: 30px;
-  box-shadow: 10px 10px 5px rgba(127, 137, 140, 0.479);
-
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .book-details h3{

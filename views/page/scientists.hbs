@@ -8,18 +8,16 @@
     </div>
 </div>
 
-
-
-<div class="container" id="container-Sc">
+<div class="container">
     <div class="row">
             {{#each items}}
-        <div class="col" id="Scientist-border">
-            
-          <img src="/images/{{this.pic}}" class="rounded-circle"  width="204" height="236" alt="Card image cap" ><br>
+        <div class="col">
+            <div class="cs-frame">
+          <img src="/images/{{this.pic}}" class="rounded-circle"  width="200"  height="236" alt="Card image cap" ><br>
            <span class="Scientist-title">{{this.name}}</span><br/>
-             <a href="/pages/scientists-detales/{{this._id}}" id="link-sc" ><p> تعرف عليه </p></a>
+             <a href="/pages/scientists-detales/{{this._id}}" id="link-sc"><p>اقرأ</p></a>
 
-
+            </div>
         </div>
             {{/each}}    
     </div>
