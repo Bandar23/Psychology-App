@@ -10,23 +10,17 @@
   </div>
 </div>
 
-<table class="table" dir="rtl">
-  <caption>List of users</caption>
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">الإضطراب</th>
-      <th scope="col">التاريخ</th>
-      <th scope="col">الناشر</th>
-    </tr>
-  </thead>
-   <tbody>
-  {{#each items}}
-    <tr>
-      <th scope="row">1</th>
-      <td><a href="/pages/subject-detales/{{this._id}}">{{this.title}}</a></td>
-      <td>{{this.Date}}</td>
-    </tr>
-{{/each}}
-  </tbody>
-</table>
+
+<div class="container">
+    <div class="row">
+            {{#each items}}
+        <div class="col">
+          <div class="Sub-frame">
+          <img src="/images/Human_Brain_Project_ES.jpg" width="200"  height="236px" alt="Card image cap" ><br>
+          <span class="Sub-title">{{this.title}}</span><br/>
+             <a href="/pages/subject-detales/{{this._id}}" id="link-sub"><p>اقرأ</p></a>
+            </div>
+        </div>
+            {{/each}}    
+    </div>
+</div>
