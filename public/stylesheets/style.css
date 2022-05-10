@@ -316,12 +316,13 @@ h2{
 
 footer{
   
+  
   position: relative;
-  background-color:#373a97;
+  background-color: #f9f9f9;
   margin-top:20px;
   margin-left: 20px;
   margin-right:5px;
-  border-bottom:inset 1px #373a97;
+  border-bottom:inset 1px #f9f9f9;
   -webkit-box-shadow: 0 4px 6px -6px #222;
   -moz-box-shadow: 0 4px 6px -6px #222;
   box-shadow: 0 4px 6px -6px #222;
@@ -1384,15 +1385,15 @@ li a:hover{
   footer{
   
     position: relative;
-    background-color:#373a97;
+    background-color:#f9f9f9;
     margin-top:20px;
     margin-left: 20px;
     margin-right:5px;
-    border-bottom:inset 1px #373a97;
+    border-top:inset 1px #373a97;
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow: 0 4px 6px -6px #222;
-    box-shadow: 0 4px 6px -6px #222;
-    height:60px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        height:60px;
     right:100%;
     left: 0%;
           
@@ -1402,6 +1403,7 @@ li a:hover{
   footer h5{
     text-align: center;
     margin-top:20px;
+    
   
     }
   

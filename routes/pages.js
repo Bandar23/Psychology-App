@@ -17,8 +17,10 @@ const ControllerBook = require('../controller/book_controller');
 const ControllerCreator = require('../controller/creators_controller');
 const ControllerSubject  = require("../controller/SubjectsController");
 const ControllerScientists = require("../controller/ScientstsController");
+const multer = require('multer');
+const passport = require('passport');
 
-const passport = require('passport')
+const upload = multer({dest:'/public/images/'});
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -143,7 +145,7 @@ router.get('/creators-subjects',isSingin,ControllerSubject.getCreatorsSubjects);
   res.render('creator/new-book',{title:'new-book', toLogin:true,massage:masseagError,creator:publisher});
  })); 
  
-router.post('/newbook',Validation.AddValidauion,ControllerBook.addBook); 
+router.post('/newbook',upload.single('pic'),ControllerBook.addBook); 
 
 router.get('/creators-new-subject',isSingin,((req,res,next)=>{
 

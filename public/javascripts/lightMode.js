@@ -1,4 +1,7 @@
 function toDark(){
+    // main page
+    let MainCard = document.querySelector(".nnn");
+
     const header = document.querySelector(".site-header");
     const nav    = document.querySelectorAll(".a__item");
     const body   = document.querySelector(".body");
@@ -38,5 +41,8 @@ function toDark(){
         
     }
 
+    // Books Page
+
+    MainCard.style.color = "red";
 
 }
