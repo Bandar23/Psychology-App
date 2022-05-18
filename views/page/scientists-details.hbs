@@ -1,19 +1,24 @@
 
 <div class="book-details">
    {{#each items}}
+   <div class="actions-user">
+      <form action="../ScientistLike"  method="post" class="Form-Actions1">
+         <input type="hidden" name="id" value="{{_id}}">
+      <button style=" border:none; cursor: pointer;" onclick="sendLike()"><i class="fa-brands fa-gratipay fa-x2" style="margin:5px;"></i></button><span id="sc-like">:</span>
+      </form>
+      <form class="Form-Actions2">
+      <button style=" border:none; cursor: pointer;"><i class="fa-solid fa-star" style="margin:5px; border: none;"></i></button><span id="sc-star">: 1</span>
+      </form>
+   </div>
                 <title>{{this.name}}</title>
+                  <img src="/images/{{this.pic}}" class="rounded-circle"  width="304" height="236" alt="Card image cap" >
+                  <h5 class="card-title">{{this.name}}</h5>
+                  <p class="card-text">{{{this.content}}}</p>
 
-                   <img src="/images/{{this.pic}}" class="rounded-circle"  width="304" height="236" alt="Card image cap" >
-
-          <h5 class="card-title">{{this.name}}</h5>
-         
-          <p class="card-text">{{{this.content}}}</p>
+   
    {{/each}}
 
 
-    <div class="actions-user" style="float:left;">
-      <button style=" border:none; cursor: pointer;"><i class="fa-brands fa-gratipay fa-x2" style="margin:5px;"></i> </button>
-      <button style=" border:none; cursor: pointer;"><i class="fa-solid fa-star" style="margin:5px; border: none;"></i></button>
-      <button style=" border:none; cursor: pointer;"><i class="fa-solid fa-thumbs-down"></i></button>
-   </div>
+   
 </div>
+<script src="/javascripts/contentActions.js"></script>

@@ -6,15 +6,15 @@ const { session } = require('passport');
 
 // get all scientists for users not creators
 getUsersScientists = function (req, res, next) {
-  Scientists.find({status:true}, (error, result) => {
+  Scientists.find({ status: true }, (error, result) => {
 
     if (error) {
       console.log(error);
     } else {
-      let ScientistsGrid =[];
+      let ScientistsGrid = [];
       let colGrid = 3;
-      for(let i =0; i<result.length; i+=colGrid){
-        ScientistsGrid.push(result.slice(i,i+colGrid));
+      for (let i = 0; i < result.length; i += colGrid) {
+        ScientistsGrid.push(result.slice(i, i + colGrid));
       }
       res.render('page/scientists', { title: 'العلماء', items: result });
     }
@@ -31,6 +31,32 @@ getDetaliesScientist = function (req, res, next) {
     }
   });
 }
+
+addNewLike = function (req, res, next) {
+  Scientists.findById({ _id: req.body.id }, (error, doc) => {
+    if (error) {
+      console.log(error);
+    } else {
+      let likes = doc.likes;
+      let id = doc._id;
+      const UpdateLikes = {
+        likes: likes+1,
+      }
+
+
+      Scientists.updateOne({ _id: id }, { $set: UpdateLikes }, (error, doc) => {
+        if (error) {
+          console.log(error);
+          return;
+        } else {
+          res.redirect('scientists-detales/' + id);
+        }
+      });
+    }
+
+  })
+}
+
 
 // all Scientists for creators not users
 
@@ -69,7 +95,7 @@ getCreatorsScientists = function (req, res, next) {
       if (error) {
         console.log(error);
       } else {
-        res.render('creator/scientists', { title: 'العلماء', items: result, toLogin: true,creator:publisher});
+        res.render('creator/scientists', { title: 'العلماء', items: result, toLogin: true, creator: publisher });
       }
     });
   } else {
@@ -77,7 +103,7 @@ getCreatorsScientists = function (req, res, next) {
       if (error) {
         console.log(error);
       } else {
-        res.render('creator/scientists', { title: 'العلماء', items: result, toLogin: true,creator:publisher });
+        res.render('creator/scientists', { title: 'العلماء', items: result, toLogin: true, creator: publisher });
       }
     });
   }
@@ -93,7 +119,7 @@ getCreatorsDetaliesScientist = function (req, res, next) {
     if (error) {
       console.log(error);
     } else {
-      res.render('creator/det-scientist', { title: 'معلومات العالم', items: doc, toLogin: true,creator:publisher,Admin:creator_type });
+      res.render('creator/det-scientist', { title: 'معلومات العالم', items: doc, toLogin: true, creator: publisher, Admin: creator_type });
     }
 
   });
@@ -108,7 +134,7 @@ getUpdateScientist = function (req, res, next) {
     if (error) {
       console.log(error);
     } else {
-      res.render('creator/edit-scientists', { title: 'تعديل ', items: doc, toLogin: true, id: req.params.info,creator:publisher,masseagError:masseagError});
+      res.render('creator/edit-scientists', { title: 'تعديل ', items: doc, toLogin: true, id: req.params.info, creator: publisher, masseagError: masseagError });
     }
   });
 }
@@ -131,39 +157,39 @@ UpdateScientist = function (req, res, next) {
 
 }
 
-Approve = function(req,res,next){
+Approve = function (req, res, next) {
   const id = req.body.id;
   const Update = {
-   status:true
- }
+    status: true
+  }
 
- Scientists.updateOne({_id:id},{$set:Update},(error,doc)=>{
-  if(error){
-   console.log(error);
-   return;
-  }else{
-   console.log(doc);
-   res.redirect('creators-scientists');
- }
+  Scientists.updateOne({ _id: id }, { $set: Update }, (error, doc) => {
+    if (error) {
+      console.log(error);
+      return;
+    } else {
+      console.log(doc);
+      res.redirect('creators-scientists');
+    }
 
-});
+  });
 
 }
 
-Delete = function(req,res,next){
+Delete = function (req, res, next) {
   const id = req.body.id;
- 
 
- Scientists.deleteOne({_id:id},(error,doc)=>{
-  if(error){
-   console.log(error);
-   return;
-  }else{
-   console.log(doc);
-   res.redirect('creators-scientists');
- }
 
-});
+  Scientists.deleteOne({ _id: id }, (error, doc) => {
+    if (error) {
+      console.log(error);
+      return;
+    } else {
+      console.log(doc);
+      res.redirect('creators-scientists');
+    }
+
+  });
 
 }
 module.exports = {
@@ -174,6 +200,7 @@ module.exports = {
   getCreatorsDetaliesScientist: getCreatorsDetaliesScientist,
   getUpdateScientist: getUpdateScientist,
   UpdateScientist: UpdateScientist,
-  Approve:Approve,
-  Delete:Delete,
+  Approve: Approve,
+  Delete: Delete,
+  addNewLike,
 }

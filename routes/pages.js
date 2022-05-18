@@ -29,6 +29,7 @@ router.get('/turbulence',ControllerSubject.getUsersSubjects);
 router.get('/subject-detales/:info',ControllerSubject.getDetaliesSubject);
 router.get('/Scientists',ControllerScientists.getUsersScientists);
 router.get('/scientists-detales/:info',ControllerScientists.getDetaliesScientist);
+router.post('/ScientistLike',ControllerScientists.addNewLike);//
 router.get('/book',ControllerBook.getBooks);
 router.get('/book-detales/:info',ControllerBook.getUsersBook);
 router.get('/history',((req,res,next)=>{

@@ -1713,5 +1713,24 @@ textarea{
 .book-details p{
   margin:50px;
 }
+
+.actions-user{
+  display: inline;
+}
+.Form-Actions1{
+  height:5px;
+  margin: 0%;
+   
+  float: left;
+  
+}
+
+.Form-Actions2{
+  height:5px;
+  margin: 0%;
+  float: right;
+  
+}
+
 }
 
