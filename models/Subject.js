@@ -25,6 +25,10 @@ const SubjectSchema = mongoose.Schema({
     status:{
         type:Boolean,
         required:true
+    },
+    
+    likes:{
+        type:Number
     }
 });
 
