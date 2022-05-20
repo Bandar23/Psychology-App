@@ -1,16 +1,18 @@
-
 <div class="book-details">
    {{#each items}}
-  
-             <title> {{this.title}}</title>
 
-          <h3 dir="rtl">{{this.title}}</h3><br/>
-          <p dir="rtl">{{{this.content}}}</p>
+   <div class="actions-user">
+      <form action="../SubjectLike" method="post" class="Form-Actions1">
+         <input type="hidden" name="id" value="{{_id}}">
+         <button style=" border:none; cursor: pointer; float:left; margin-top:240px"><i class="fa-brands fa-gratipay fa-x2"
+               style="margin:5px;"></i></button>
+      </form>
+
+   </div>
+   <title> {{this.title}}</title>
+   <h3 dir="rtl">{{this.title}}</h3><br />
+   <p dir="rtl">{{{this.content}}}</p>
    {{/each}}
 
-  <div class="actions-user" style="float:left;">
-      <button style=" border:none; cursor: pointer;"><i class="fa-brands fa-gratipay fa-x2" style="margin:5px;"></i> </button>
-      <button style=" border:none; cursor: pointer;"><i class="fa-solid fa-star" style="margin:5px; border: none;"></i></button>
-      <button style=" border:none; cursor: pointer;"><i class="fa-solid fa-thumbs-down"></i></button>
-   </div>
+  
 </div>

@@ -211,6 +211,7 @@ router.post('/newSubject',isSingin,SubjectValidation.SubjecAdd,ControllerSubject
 router.post('/updateSubject',isSingin,ControllerSubject.updateSubject);
 router.post('/Approvesubject',isSingin,ControllerSubject.Approve);
 router.post('/Deletesubject',isSingin,ControllerSubject.Delete);
+router.post('/SubjectLike',ControllerSubject.addLike);
 
 
 
@@ -237,6 +238,12 @@ function isSingin(req,res,next){
       return;
      }
     next();
+    }
+
+    /// function for likes
+
+    function sendLike(){
+      alert(1);
     }
 
 

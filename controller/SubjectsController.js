@@ -1,6 +1,7 @@
 const Subject = require("../models/Subject");
 const {check,validationResult} = require('express-validator');
 const { session } = require('passport');
+const { redirect } = require("express/lib/response");
 
 
 
@@ -155,6 +156,32 @@ Delete = function(req,res,next){
 });
 }
 
+addLike = function(req,res,next){
+Subject.findById({_id:req.body.id},(error,doc)=>{
+if(error){
+  console.log(error);
+  return;
+}else{
+  let likes = doc.likes;
+  let id    = doc._id;
+  const UpdateLikes = {
+    likes: likes +1,
+  }
+
+  Subject.updateOne({_id:id}, {$set:UpdateLikes}, (error,doc)=>{
+     if(error){
+       console.log(error);
+       return;
+     }else{
+       res.redirect('subject-detales/'+id);
+     }
+  }); 
+
+}
+});
+}
+
+
 module.exports = {
     addSubject:addSubject,
     getUsersSubjects:getUsersSubjects,
@@ -165,4 +192,5 @@ module.exports = {
     updateSubject:updateSubject,
     Approve:Approve,
     Delete:Delete,
+    addLike:addLike,
 }
