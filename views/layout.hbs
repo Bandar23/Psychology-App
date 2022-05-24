@@ -3,6 +3,8 @@
 
 <head>
   <title>{{title}}</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.tiny.cloud/1/sm78zfcsxu9o3edisjj0dd3e67qtnli0lo1ak9tk05hffl7x/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
@@ -43,7 +45,6 @@
           <span>القائمة الرئيسية <i class="fa-solid fa-list"></i></span>
           <div class="dropdown-content">
             <a class="a__item" href="/">الرئيسية</a><br />
-            <a class="a__item" href="/pages/login">إنظم لنا</a><br />
             <a class="a__item" href="/pages/book">الكتب</a><br />
             <a class="a__item" href="/pages/turbulence">الإضطررابات </a><br />
             <a class="a__item" href="/pages/scientists">سير العلماء</a><br />
@@ -51,14 +52,12 @@
             </ul>
           </div>
         </div>
-        <button id="translet" type="button" class="btn btn-light" style="float: left;margin-left:10px"><i
-            class="fa-solid fa-language fa-2x"></i></button>
-        <button id="light-mode" type="button" class="btn btn-light" style="float: left;margin-left:10px"
+          <a class="a__item" href="/"><img class="logo-img" src="/images/Black_and_White_Minimalist_Initials_Logo_Template_AdobeCreativeCloudExpress.gif"></a>
+        <button id="light-mode" type="button" class="btn btn-light" style="float: right;margin-left:10px"
           onclick="toDark()"><i class="fa-solid fa-moon fa-2x"></i></i></button>
 
         <ul>
-          <li class="nav__item"><a class="a__item" href="/pages/login">إنظم لنا</a></li>
-          <li class="nav__item"><a class="a__item" href="/pages/book">الكتب</a></li>
+          <li class="nav__item"><a class="a__item" href="/pages/book" style="margin-bottom:10px;">الكتب</a></li>
           <li class="nav__item"><a class="a__item" href="/pages/scientists">سير العلماء</a></li>
           <li class="nav__item"><a class="a__item" href="/pages/turbulence">المواضيع و الدراسات</a></li>
           <li class="nav__item"><a class="a__item" href="/pages/about">من نحن</a></li>

@@ -214,6 +214,11 @@ router.post('/Deletesubject',isSingin,ControllerSubject.Delete);
 router.post('/SubjectLike',ControllerSubject.addLike);
 
 
+router.get('/join',(req,res,next)=>{
+
+  res.render('page/join',{title:'الانضمام'});
+
+});
 
 
 // functio to approve 

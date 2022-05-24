@@ -9,6 +9,7 @@ const MongoStore = require('connect-mongo')(expressSession);
 const flash = require('connect-flash');
 const passport = require('passport');
 const aos = require('aos')
+var favicon = require('serve-favicon');
 
 var indexRouter = require('./routes/index');
 var pagesRouter = require('./routes/pages');
@@ -16,13 +17,14 @@ const mongoose  = require('mongoose');
 const { session } = require('passport');
 
 var app = express();
- 
+
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 
 
 mongoose.connect(
   process.env.MONGODB_URI ||'mongodb://localhost:/Psychology_App',
-  {
+  { 
     useNewUrlParser:true
   },(err)=>{
 
@@ -62,6 +64,7 @@ app.use(expressSession({
     expires: new Date(Date.now() + 60 * 60 * 1000) // 1 hour;
   }
 }));
+
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
