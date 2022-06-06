@@ -135,7 +135,7 @@ a {
   margin-top:100px;
   margin-bottom:50px;
   padding-top:30px;
-  height:280px;
+  height:320px;
   width: 100%;
   background-color: rgba(79, 99, 99, 0.07);
   border-bottom:inset 1px rgb(255, 255, 255);
@@ -204,14 +204,15 @@ h2{
   width:250px;
   height:100px;
   margin-left:100px;
-  margin-right:80px;
+  margin-right:50px;
   padding-left:50px;
   margin-top: 20px;
 }
 .text p {
   text-align: center;
-  font-size:large;
+  font-size:medium;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 20px;
 } 
 
 .section-2{
@@ -262,7 +263,7 @@ h2{
 
 .text-2 p {
   text-align: center;
-  font-size:large;
+  font-size:medium;
   font-family: Georgia, 'Times New Roman', Times, serif;
 
   
