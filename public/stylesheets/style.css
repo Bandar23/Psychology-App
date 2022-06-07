@@ -1062,14 +1062,13 @@ li a:hover{
       padding:20px;
       width:250px;
       height:100px;
+      padding-left:80px;
   }
   .text p {
       display: block;
       font-family:cursive;
-      white-space: pre;
-      margin: 1em 0;
       font-size:20px;
-      text-align: right;
+      text-align:center;
       
     } 
   
@@ -1124,12 +1123,8 @@ li a:hover{
   
   .text-2 p {
       display: block;
-      font-family:cursive;
-      white-space: pre;
-      margin: 1em 0;
       font-size:20px;
-      text-align: right;
-      color: gray;
+      text-align: center;
       
     } 
   
