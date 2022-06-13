@@ -18,6 +18,7 @@ getBooks = function(req,res,next){
          BooksGrid.push(result.slice(i,i+colGrid));
      }
      res.render('page/book', {title:'الكتب', items:result}); 
+     console.log("this book");
    }
 
  });

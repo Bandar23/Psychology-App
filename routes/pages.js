@@ -17,12 +17,14 @@ const ControllerBook = require('../controller/book_controller');
 const ControllerCreator = require('../controller/creators_controller');
 const ControllerSubject  = require("../controller/SubjectsController");
 const ControllerScientists = require("../controller/ScientstsController");
+const ControllerEmail = require('../controller/sendEmail');
 const passport = require('passport');
 
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+ 
+  res.render('index',{error:masseagError});
 });
 
 router.get('/turbulence',ControllerSubject.getUsersSubjects);
@@ -219,6 +221,8 @@ router.get('/join',(req,res,next)=>{
   res.render('page/join',{title:'الانضمام'});
 
 });
+
+//router.post('/sendEmail',ControllerEmail.sendToEmail);
 
 
 // functio to approve 
