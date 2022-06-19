@@ -9,6 +9,7 @@ const MongoStore = require('connect-mongo')(expressSession);
 const flash = require('connect-flash');
 const passport = require('passport');
 const aos = require('aos')
+const bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 
 var indexRouter = require('./routes/index');

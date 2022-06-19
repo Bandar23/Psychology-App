@@ -17,7 +17,6 @@ const ControllerBook = require('../controller/book_controller');
 const ControllerCreator = require('../controller/creators_controller');
 const ControllerSubject  = require("../controller/SubjectsController");
 const ControllerScientists = require("../controller/ScientstsController");
-const ControllerEmail = require('../controller/sendEmail');
 const passport = require('passport');
 
 
