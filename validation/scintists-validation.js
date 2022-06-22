@@ -16,13 +16,7 @@ exports.Validation =
     check("pic").not().isEmpty().withMessage('رجاء ادخال الصورة'),
     check("content").not().isEmpty().escape().withMessage("رجاء ادخل نبذة عن العالم "),
     check("content").not().isAlpha('a-zA-Z'['ar']).withMessage('رجاء أدخل النبذة باللغة العربية'),
-    check("content").custom((value,req)=>{
-        let reg  = /[\W][A-Za-z-0-9]/g;
-        if(value.match(reg)){
-          throw new Error('الرجاء ادخال النبذة بشكل صحيح');
-        }
-        return true;
-    }),(req,res,next)=>{
+    (req,res,next)=>{
         const Errors = validationResult(req);
         if(!Errors.isEmpty()){
         //  console.log(Errors);
