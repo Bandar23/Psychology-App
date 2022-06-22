@@ -84,7 +84,8 @@ addSubject = function(req,res,next){
     content:req.body.content,
     Date:Time,
     publisher:req.body.publisher,
-    status:false
+    status:false,
+    likes:0,
   });
 
   newSubject.save((error,doc)=>{

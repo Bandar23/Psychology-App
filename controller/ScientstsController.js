@@ -66,7 +66,8 @@ addScientist = function (req, res, next) {
     pic: req.body.pic,
     content: req.body.content,
     publisher: req.body.c_name,
-    status: false
+    status: false,
+    likes:0,
   });
 
   newScientist.save((error, result) => {
