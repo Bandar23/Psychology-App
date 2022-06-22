@@ -30,7 +30,7 @@ router.get('/turbulence',ControllerSubject.getUsersSubjects);
 router.get('/subject-detales/:info',ControllerSubject.getDetaliesSubject);
 router.get('/Scientists',ControllerScientists.getUsersScientists);
 router.get('/scientists-detales/:info',ControllerScientists.getDetaliesScientist);
-router.post('/ScientistLike',ControllerScientists.addNewLike);//
+router.get('/ScientistLike/:id',ControllerScientists.addNewLike);//
 router.get('/book',ControllerBook.getBooks);
 router.get('/book-detales/:info',ControllerBook.getUsersBook);
 router.get('/history',((req,res,next)=>{
@@ -212,7 +212,7 @@ router.post('/newSubject',isSingin,SubjectValidation.SubjecAdd,ControllerSubject
 router.post('/updateSubject',isSingin,ControllerSubject.updateSubject);
 router.post('/Approvesubject',isSingin,ControllerSubject.Approve);
 router.post('/Deletesubject',isSingin,ControllerSubject.Delete);
-router.post('/SubjectLike',ControllerSubject.addLike);
+router.get('/SubjectLike/:id',ControllerSubject.addLike);
 
 
 router.get('/join',(req,res,next)=>{

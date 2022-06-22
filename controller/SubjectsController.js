@@ -157,7 +157,7 @@ Delete = function(req,res,next){
 }
 
 addLike = function(req,res,next){
-Subject.findById({_id:req.body.id},(error,doc)=>{
+Subject.findById({_id:req.params.id},(error,doc)=>{
 if(error){
   console.log(error);
   return;
@@ -173,7 +173,7 @@ if(error){
        console.log(error);
        return;
      }else{
-       res.redirect('subject-detales/'+id);
+       res.redirect('../subject-detales/'+id);
      }
   }); 
 

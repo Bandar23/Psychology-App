@@ -33,7 +33,7 @@ getDetaliesScientist = function (req, res, next) {
 }
 
 addNewLike = function (req, res, next) {
-  Scientists.findById({ _id: req.body.id }, (error, doc) => {
+  Scientists.findById({ _id: req.params.id }, (error, doc) => {
     if (error) {
       console.log(error);
     } else {
@@ -49,7 +49,7 @@ addNewLike = function (req, res, next) {
           console.log(error);
           return;
         } else {
-          res.redirect('scientists-detales/' + id);
+          res.redirect('../scientists-detales/'+id);
         }
       });
     }

@@ -1,25 +1,16 @@
-
 <div class="book-details">
    {{#each items}}
-   <div class="actions-user">
-      <form action="../ScientistLike"  method="post" class="Form-Actions1">
-         <input type="hidden" name="id" value="{{_id}}">
-<button style=" border:none; cursor: pointer; float:left; margin-top:240px"><i class="fa-brands fa-gratipay fa-x2"
-               style="margin:5px;"></i></button>
-                     </form>
-      <form class="Form-Actions2">
-      <button style=" border:none; cursor: pointer;"><i class="fa-solid fa-star" style="margin:5px; border: none;"></i></button><span id="sc-star">: 1</span>
-      </form>
-   </div>
-                <title>{{this.name}}</title>
-                  <img src="/images/{{this.pic}}" class="rounded-circle"  width="304" height="236" alt="Card image cap" >
-                  <h5 class="card-title">{{this.name}}</h5>
-                  <p class="card-text">{{{this.content}}}</p>
+   <title>{{this.name}}</title>
+   <img src="/images/{{this.pic}}" class="rounded-circle" width="304" height="236" alt="Card image cap">
+   <h5 class="card-title">{{this.name}}</h5>
+   <p class="card-text">{{{this.content}}}</p>
 
-   
+    
+    <a href="/pages/ScientistLike/{{this._id}}" style="border:none;cursor: pointer; float:left;"><i class="fa-brands fa-gratipay fa-x2" style="margin:5px;float: left;"></i></a>
    {{/each}}
 
 
-   
+
+
 </div>
 <script src="/javascripts/contentActions.js"></script>

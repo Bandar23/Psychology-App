@@ -32,13 +32,6 @@ exports.AddValidauion =
       
         check('brife').not().isEmpty().withMessage('رجاءا ادخل النبذة'),
         check('brife').not().isAlpha('a-zA-Z'['ar']).withMessage('رجاءا كتابة النبذة باللغة العربية '),
-        check('brife').custom((value,{req})=>{
-          let reg  = /[\W][A-Za-z-0-9]/g;
-          if(value.match(reg)){
-            throw new Error('الرجاء كتابة النبذة بشكل صحيح');
-          }
-          return true;
-        }),
         check('pic').not().isEmpty().withMessage('رجاءا ادخل صورة الكتاب'),
         (req, res, next) => {
 
