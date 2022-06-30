@@ -5,10 +5,11 @@
    <title> {{this.title}}</title>
    <h3 dir="rtl">{{this.title}}</h3><br/>
    <p dir="rtl">{{{this.content}}}</p>
-   <a href="/pages/SubjectLike/{{this._id}}" style="border:none;cursor: pointer; float:left;"><i class="fa-brands fa-gratipay fa-x2" style="margin:5px;float: left;"></i></a>
-   <a href="/pages/SubjectFav/{{this._id}}"  style="border:none; cursor: pointer;"><i class="fa-solid fa-star" style="margin:5px;float: left;"></i></a>
-
+   <input type="hidden" id="id" value="{{this._id}}">
+   <button id="like" style="border:none;cursor: pointer; float:left;hover:background-color:red;"><i id="iconLike" class="fa-brands fa-gratipay fa-x2" style="margin:5px;float: left; hover:background-color:red;"></i></button>
+   <i id="liked" class="fa-solid fa-heart fa-x2" style="margin:5px;float:left; display:none; color:red;"></i>
    {{/each}}
 
 
 </div>
+<script src="/javascripts/contentActions.js"></script>
