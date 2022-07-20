@@ -77,10 +77,16 @@ getCreatorsDetailsSubject = function(req,res,next){
 
 addSubject = function(req,res,next){
  
+  if(!req.file){
+    req.flash('error-add','الرجاء إدخال صورة مناسبة للمقالة');
+    res.redirect('creators-new-subject');
+    return;
+  }else{
+
    let Time = new Date();
-   
   const newSubject = new Subject({
     title:req.body.title,
+    pic:req.file.filename,
     content:req.body.content,
     Date:Time,
     publisher:req.body.publisher,
@@ -100,6 +106,7 @@ addSubject = function(req,res,next){
        return;
     }
 });
+  }
 
 }
 

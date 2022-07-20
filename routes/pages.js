@@ -18,6 +18,36 @@ const ControllerCreator = require('../controller/creators_controller');
 const ControllerSubject  = require("../controller/SubjectsController");
 const ControllerScientists = require("../controller/ScientstsController");
 const passport = require('passport');
+let multer = require('multer');
+
+let storage = multer.diskStorage({
+
+    destination:function(req,res,cb){
+      cb(null,'./public/images');
+    },
+    filename:function(req,file,cb){
+       cb(null,Date.now()+file.originalname);
+    }
+});
+
+let fileFilter = function(req,file,cb){
+  if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg")
+  {
+    cb(null, true);
+  }
+  else
+  {
+    cb(null, false);
+    return cb(new Error('Only .png, .jpg and .jpeg format allowed!'+file));
+  }
+};
+
+let upload = multer({
+  storage:storage,
+  fileFilter:fileFilter
+});
+
+let uploadImageSingle = upload.single('pic');
 
 
 /* GET users listing. */
@@ -41,6 +71,11 @@ router.get('/history',((req,res,next)=>{
 
 router.get('/about',((req,res,next)=>{
 res.render('page/about',{title:'من نكون'})
+}));
+
+router.get('/treatment-journey',((req,res,next)=>{
+  
+  res.render('page/treatment-journey',{title:'رحلة العلاج و التعافي'});
 }));
 
 
@@ -126,7 +161,15 @@ router.get('/new-scientist',isSingin,((req,res,next)=>{
    res.render('creator/new-scientist',{title:'إضافة شخصية جديدة',toLogin:true,creator:publisher,Error:masseagError})
 })); 
 router.post('/scientist-Update',isSingin,ControllerScientists.UpdateScientist);
-router.post('/addScientist',isSingin,ScientistsValidation.Validation,ControllerScientists.addScientist);
+router.post('/addScientist',isSingin,upload.single('pic'),ScientistsValidation.Validation,ControllerScientists.addScientist,
+(error,req,res,next)=>{
+  if(error){
+    req.flash('error-add',error.message);
+    res.redirect('new-scientist');
+    return;
+  }
+});
+
 router.post('/ApproveScientist',isSingin,ControllerScientists.Approve);
 router.post('/DeleteScientist',isSingin,ControllerScientists.Delete);
 
@@ -145,14 +188,22 @@ router.get('/creators-subjects',isSingin,ControllerSubject.getCreatorsSubjects);
   res.render('creator/new-book',{title:'new-book', toLogin:true,massage:masseagError,creator:publisher});
  })); 
  
-router.post('/newbook',Validation.AddValidauion,ControllerBook.addBook); 
+ 
+router.post('/newbook',upload.single('pic'),Validation.AddValidauion,ControllerBook.addBook,
+(error,req,res,next)=>{
+  if(error){
+    req.flash('error-add',error.message);
+    res.redirect('creators-new-book');
+    return;
+  }
+}); 
 
 router.get('/creators-new-subject',isSingin,((req,res,next)=>{
 
   let masseagError = req.flash('error-add');
   const publisher = req.user.c_name;
   
-  res.render('creator/new-subject',{title:'مقال جديد', toLogin:true,massage:masseagError,creator:publisher,masseagError:masseagError});
+  res.render('creator/new-subject',{title:'مقال جديد', toLogin:true,massage:masseagError,creator:publisher});
 
 
  })); 
@@ -203,12 +254,22 @@ router.get('/det-book/:info',ControllerBook.getCreatorsBook);
 router.get('/edit-book/:id',ControllerBook.getUpdateBook);
 router.post('/editbook',isSingin,ControllerBook.updateBook);
 router.post('/ApproveBook',isSingin,ControllerBook.Approve);
-router.post('/DeleteBook',isSingin,ControllerBook.Delete);
+router.post('/DeleteBook/',isSingin,ControllerBook.Delete);
+//router.post('/creatorsBdelete/',isSingin,ControllerBook.CreatorsDelete);
+
 
 
 router.get('/det-subject/:info',ControllerSubject.getCreatorsDetailsSubject);
 router.get('/edit-subject/:info',ControllerSubject.getEditSubject);
-router.post('/newSubject',isSingin,SubjectValidation.SubjecAdd,ControllerSubject.addSubject); 
+router.post('/newSubject',isSingin,upload.single('pic'),SubjectValidation.SubjecAdd,ControllerSubject.addSubject,
+(error,req,res,next)=>{
+  if(error){
+    req.flash('error-add',error.message);
+    res.redirect('creators-new-subject');
+    return;
+  }
+
+}); 
 router.post('/updateSubject',isSingin,ControllerSubject.updateSubject);
 router.post('/Approvesubject',isSingin,ControllerSubject.Approve);
 router.post('/Deletesubject',isSingin,ControllerSubject.Delete);

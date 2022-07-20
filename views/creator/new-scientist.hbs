@@ -20,7 +20,7 @@
                 </ul>
                 {{/each}}
                 
-         <form action="addScientist" method="post">
+         <form action="addScientist" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label" dir="rtl">اسم العالم</label>
                 <input type="text" class="form-control" id="name" name="name"
@@ -30,7 +30,7 @@
             
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label" dir="rtl">صورة العالم</label>
-                <input type="file" class="form-control" name="pic" accept="image/jpeg,image/jpg" id="pic"
+                <input type="file" class="form-control" name="pic" id="pic"
                     value=""><br/>
                     <span id="error_pic">dfjhdsj</span>
 

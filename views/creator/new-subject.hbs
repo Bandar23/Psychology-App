@@ -14,18 +14,24 @@
     <div class="newBook-form">
         <h3> موضوع جديد</h3>
 
-           {{#each masseagError}}
+           {{#each massage}}
                 <ul class="erroaddBook">
                     <li>{{this}}</li>
                 </ul>
                 {{/each}}
                 
-        <form action="newSubject" method="post">
+        <form action="newSubject" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label" dir="rtl">العنوان</label>
                 <input type="text" class="form-control" id="name" name="title"
                     aria-describedby="emailHelp" value="">
             </div>  
+
+             <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">صورة الموضوع</label>
+                <input type="file" class="form-control" name="pic" id="exampleInputPassword1"
+                    value="">
+            </div>
 
              <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label" dir="rtl">محتوى الموضوع</label>

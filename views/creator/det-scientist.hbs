@@ -42,7 +42,11 @@
   <div class="book-details">
    {{#each items}}
           <h3 dir="rtl">{{this.name}}</h3><br/>
-          <p dir="rtl">{{this.content}}</p>
+          <p dir="rtl">{{{this.content}}}</p><br/>
+            <form method="post" action="/pages/DeleteScientist">
+              <input type="hidden" name="id" value="{{this._id}}">
+              <button type="submit" id="but" class="btn btn-danger" style="float: left;">حذف</button>
+             </form>
    {{/each}}
 </div>
 {{/if}}

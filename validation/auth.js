@@ -27,12 +27,9 @@ exports.AddValidauion =
         }),
       
         check('pages').not().isEmpty().withMessage('رجاءا ادخل عدد الصفحات'),
-      
         check('date').not().isEmpty().withMessage('رجاءا ادخل تاريح النشر'),
-      
         check('brife').not().isEmpty().withMessage('رجاءا ادخل النبذة'),
         check('brife').not().isAlpha('a-zA-Z'['ar']).withMessage('رجاءا كتابة النبذة باللغة العربية '),
-        check('pic').not().isEmpty().withMessage('رجاءا ادخل صورة الكتاب'),
         (req, res, next) => {
 
           const Errors = validationResult(req);

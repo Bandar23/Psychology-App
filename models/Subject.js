@@ -7,6 +7,11 @@ const SubjectSchema = mongoose.Schema({
         required:true
     },
 
+    pic:{
+        type:String,
+        require:true
+    },
+
     content:{
         type:String,
         required:true

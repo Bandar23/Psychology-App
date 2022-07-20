@@ -61,9 +61,15 @@ addNewLike = function (req, res, next) {
 // all Scientists for creators not users
 
 addScientist = function (req, res, next) {
+
+  if(!req.file){
+    req.flash('error-add', 'ادخل صورة العالم');
+    res.redirect('new-scientist');
+    return;
+  }else{
   const newScientist = new Scientists({
     name: req.body.name,
-    pic: req.body.pic,
+    pic: req.file.filename,
     content: req.body.content,
     publisher: req.body.c_name,
     status: false,
@@ -84,6 +90,7 @@ addScientist = function (req, res, next) {
   });
 
   console.log('This: ' + req.user._id);
+}
 
 
 }

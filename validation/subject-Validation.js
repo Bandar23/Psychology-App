@@ -14,18 +14,12 @@ exports.SubjecAdd =
     }),
     check("content").not().isEmpty().escape().withMessage("الرجاء ادخال المحتوى"),
     check("content").not().escape().isAlpha('a-zA-Z'['ar']).withMessage("الرجاء ادخل المحتوى باللغة العربية  "),
-    check("content").custom((value,req)=>{
-        let reg  = /[\W][A-Za-z-0-9]/g;
-        if(value.match(reg)){
-          throw new Error('الرجاء ادخال المحتوى بشكل صحيح');
-        }
-        return true;
-    }),(req,res,next)=>{
+    (req,res,next)=>{
         const Errors = validationResult(req);
-        if(!Errors.isEmpty){
+        if(!Errors.isEmpty()){
             let validationMassage = [];
 
-            for(let i=0; i<Errors.errors.lengh; i++){
+            for(let i=0; i<Errors.errors.length; i++){
                 validationMassage.push(Errors.errors[i].msg);
             }
 
@@ -37,4 +31,4 @@ exports.SubjecAdd =
         }
         
 
-]
+];

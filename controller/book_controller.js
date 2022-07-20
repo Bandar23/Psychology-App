@@ -27,16 +27,26 @@ getBooks = function(req,res,next){
 
 
 addBook = function(req,res,next){ 
+
+//  res.send({file:req.file.filename});
+      if(!req.file){
+        req.flash('error-add','أدخل صورة الكتاب رجاء');
+        res.redirect('creators-new-book');
+        return;
+      }else{
+
       const newBook = new Book({
         b_name: req.body.Bname,
         writer: req.body.Rname,
         pages:  req.body.pages,
         b_date: req.body.date,
-        b_pic : req.body.pic,
+        b_pic : req.file.filename,
         prief: req.body.brife,
         publisher:req.user.c_name,
         status:false
       });
+
+      console.log(req.file);
   
       newBook.save((error,result)=>{
   
@@ -54,6 +64,7 @@ addBook = function(req,res,next){
     
       console.log('This: '+req.user._id);
 
+    }
     
 }
 
@@ -128,7 +139,7 @@ getUpdateBook = function(req,res,next){
 }
 
 updateBook = function(req,res,next){
-
+       let id = req.body.id;
         const BookUpdate = {
           b_name:req.body.Bname,
           writer:req.body.Rname,
@@ -138,7 +149,7 @@ updateBook = function(req,res,next){
 
         }
 
-      Book.updateOne({_id:req.params.id},{$set:BookUpdate},(error,doc)=>{
+      Book.updateOne({_id:id},{$set:BookUpdate},(error,doc)=>{
        if(error){
         console.log(error);
         return;
@@ -170,20 +181,35 @@ updateBook = function(req,res,next){
  }
 
  Delete = function(req,res,next){
-  const id = req.body.id;
+  let id = req.body.id;
  
 
  Book.deleteOne({_id:id},(error,doc)=>{
   if(error){
-   console.log(error);
+   console.log('error',error);
    return;
   }else{
-   console.log(doc);
+   console.log('Done',doc);
    res.redirect('creators-book');
  }
 
 });
 
+}
+
+CreatorsDelete = function(req,res,next){
+let id = req.body.id;
+ 
+
+ Book.deleteOne({_id:id},(error,doc)=>{
+  if(error){
+   console.log('error',error);
+   return;
+  }else{
+   console.log(doc);
+   res.redirect('creators-book');
+ }
+ });
 }
 
 
@@ -197,6 +223,7 @@ module.exports = {
     updateBook:updateBook,
     Approve:Approve,
     Delete:Delete,
+    CreatorsDelete:CreatorsDelete,
 }
 
 

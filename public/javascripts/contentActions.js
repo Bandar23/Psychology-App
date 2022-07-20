@@ -14,9 +14,6 @@ $(document).ready(function(){
                 document.getElementById('like').style.display = 'none';
                // $("#liked").html('<i class="fa-solid fa-heart"></i>');
                 document.getElementById('liked').style.display = 'block';
-
-
-
 			},
 			error : function(e) {
 				alert("Error!")
