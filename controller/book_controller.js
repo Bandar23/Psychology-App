@@ -212,6 +212,23 @@ let id = req.body.id;
  });
 }
 
+reports = function(req,res,next){
+
+  Book.aggregate([
+    {
+      $group: { _id: "$publisher", count: { $sum: 1 } }
+    }
+],(error,doc)=>{
+     if(error){
+      console.log(error);
+      return;
+     }else{
+      console.log(doc);
+      res.render('creator/book-reports',{title:'تقارير الكتب',toLogin:true,items:doc})
+     }
+  });
+}
+
 
 module.exports = {
     getBooks:getBooks,
@@ -224,6 +241,7 @@ module.exports = {
     Approve:Approve,
     Delete:Delete,
     CreatorsDelete:CreatorsDelete,
+    reports:reports,
 }
 
 

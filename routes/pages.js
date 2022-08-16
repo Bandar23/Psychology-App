@@ -1,26 +1,28 @@
-var express = require('express');
+var express      = require('express');
 const { render } = require('express/lib/response');
 var router = express.Router();
 const {check,validationResult} = require('express-validator');
-const Validation = require('../validation/auth');
+const Validation           = require('../validation/auth');
 const ScientistsValidation = require('../validation/scintists-validation');
-const SubjectValidation = require('../validation/subject-Validation');
-const UserValidauion = require('../validation/user-Validation');
+const SubjectValidation    = require('../validation/subject-Validation');
+const UserValidauion       = require('../validation/user-Validation');
+const RequestValidation    = require('../validation/req-validation');
 
 
-const Book = require('../models/book');
+const Book       = require('../models/book');
 const Scientists = require('../models/scientists');
-const Creator =  require('../models/creators');
-const Subject = require('../models/Subject');
+const Creator    =  require('../models/creators');
+const Subject    = require('../models/Subject');
 
-const ControllerBook = require('../controller/book_controller');
-const ControllerCreator = require('../controller/creators_controller');
-const ControllerSubject  = require("../controller/SubjectsController");
+const ControllerBook       = require('../controller/book_controller');
+const ControllerCreator    = require('../controller/creators_controller');
+const ControllerSubject    = require("../controller/SubjectsController");
 const ControllerScientists = require("../controller/ScientstsController");
+const ControllerRequests   = require('../controller/request_controller');
 const passport = require('passport');
-let multer = require('multer');
+let multer     = require('multer');
 
-let storage = multer.diskStorage({
+let storage    = multer.diskStorage({
 
     destination:function(req,res,cb){
       cb(null,'./public/images');
@@ -120,6 +122,7 @@ next();
 
 
 router.get('/creators-main',isSingin,((req,res,next)=>{
+  let masseagError = req.flash('error-req');
 
   Creator.findById({_id:req.user.id},(error,result)=>{
  
@@ -128,7 +131,7 @@ router.get('/creators-main',isSingin,((req,res,next)=>{
     }else{
     console.log(req.session)
     console.log('This:'+req.user);
-  res.render('creator/main',{title:'main', toLogin:true,items:result});
+  res.render('creator/main',{title:'main', toLogin:true,items:result,error:masseagError});
     }
   });
 
@@ -169,12 +172,14 @@ router.post('/addScientist',isSingin,upload.single('pic'),ScientistsValidation.V
     return;
   }
 });
-
+ 
 router.post('/ApproveScientist',isSingin,ControllerScientists.Approve);
 router.post('/DeleteScientist',isSingin,ControllerScientists.Delete);
 
 
+router.post ('',((req,res,next)=>{
 
+}));
  
 router.get('/creators-subjects',isSingin,ControllerSubject.getCreatorsSubjects); 
  router.get('/creators-book',isSingin,ControllerBook.getBook); 
@@ -274,6 +279,11 @@ router.post('/updateSubject',isSingin,ControllerSubject.updateSubject);
 router.post('/Approvesubject',isSingin,ControllerSubject.Approve);
 router.post('/Deletesubject',isSingin,ControllerSubject.Delete);
 router.get('/SubjectLike/:id',ControllerSubject.addLike);
+router.get('/subject-reports',ControllerSubject.Sreports);
+
+// requests
+
+router.post('/addRequest',isSingin,RequestValidation.ReqAdd,ControllerRequests.addRequest);
 
 
 router.get('/join',(req,res,next)=>{
@@ -282,14 +292,7 @@ router.get('/join',(req,res,next)=>{
 
 });
 
-//router.post('/sendEmail',ControllerEmail.sendToEmail);
-
-
-// functio to approve 
-
-function BookApprove(id){
-    console.log(id);
-}
+router.get('/book-reports',isSingin,ControllerBook.reports);
 
 function isSingin(req,res,next){
   if(!req.isAuthenticated()){

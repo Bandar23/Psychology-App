@@ -2,6 +2,7 @@ const Subject = require("../models/Subject");
 const {check,validationResult} = require('express-validator');
 const { session } = require('passport');
 const { redirect } = require("express/lib/response");
+const { reports } = require("./book_controller");
 
 
 
@@ -189,6 +190,10 @@ if(error){
 });
 }
 
+Sreports = function(req,res,next){
+  res.render('creator/sublect-reports',{title:'تقارير المقالات',toLogin:true})
+}
+
 
 module.exports = {
     addSubject:addSubject,
@@ -201,4 +206,5 @@ module.exports = {
     Approve:Approve,
     Delete:Delete,
     addLike:addLike,
+    Sreports:Sreports,
 }

@@ -1,4 +1,6 @@
+
 {{#if items.c_type}}
+
   <meta charset="UTF-8">
 <div class="all-content">
     <div class="nav-admin">
@@ -8,14 +10,36 @@
         <div class="lft">
             <a href="/pages/creators-logout"> <i class="fas fa-sign-out-alt fa-2x"></i></a>
             <a href="#"><i class="far fa-bell fa-2x"></i></a>
-            <a href="#" class="add-send" onclick="ch()"><i class="fa-solid fa-plus fa-2x"></i></a>
+            <button id="show" class="add-send" onclick="ch()"><i class="fa-solid fa-plus fa-2x"></i></button>
         </div>
     </div>
-
+      
+      <div class="requests">
+        {{#each error}}
+                <ul class="erroaddBook">
+                    <li>{{this}}</li>
+                </ul>
+                {{/each}}
+            
+          <form action="addRequest" method="POST" class="form-requests">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">عنوان الطلب</label><br/>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="title"
+                    aria-describedby="emailHelp">
+             </div>  
+             <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">تفاصيل الطلب</label><br/>
+                <textarea type="text-area" class="form-control" name="content" id="exampleInputPassword1"></textarea>
+            </div>
+             <div class="mb-3">
+              <input type="hidden" class="form-control" name="sender" value="{{items.c_name}}">
+             </div><br/>
+            <button type="submit" class="btn btn-primary">ارسال</button>
+          </form>
+      </div>
 
 
     <div class="reports">
-
         <div class="card">
             <div class="card-header " dir="rtl">
                 محررين جدد
@@ -69,7 +93,7 @@
             <div class="card-body">
                 <h5 class="card-title" dir="ltr">تقارير الاختبارات و المقاييس</h5>
                 <p class="card-text" dir="rtl">تحديث مستمر عن حصيلة الاختبارات و المقاييس  و المشاهدة و الاعجاب</p>
-                <a href="#" class="btn btn-primary">هنا</a>
+                <a href="/pages/book-reports" class="btn btn-primary">هنا</a>
             </div>
         </div>
 
@@ -101,12 +125,10 @@
             <div class="card-body">
                 <h5 class="card-title" dir="ltr">تقارير المواضيع والدراسات</h5>
                 <p class="card-text" dir="rtl">تحديث مستمر عن الدراسات  و المشاهدة و الاعجاب</p>
-                <a href="#" class="btn btn-primary">هنا</a>
+                <a href="/pages/subject-reports" class="btn btn-primary">هنا</a>
             </div>
-        </div>
-
-
-    </div>
+       </div>
+</div>
 
 
 
@@ -141,12 +163,9 @@
     </div>
     
 
-
 </div>
-
-
-<script src="/javascripts/sending.js"></script>
-
+<script src="/javascripts/lightMode.js"></script>
+  
 
 
 {{/if}}
@@ -154,16 +173,32 @@
  <meta charset="UTF-8">
 <div class="all-content">
     <div class="nav-admin">
-       <div class="rit">
-           <a href="/pages/creators-profile"><p style="font-size: small;">Author {{items.c_name}}</p><i class="far fa-user-circle fa-2x"><br/></i></a>
+      <div class="rit">
+           <a href="/pages/creators-profile"><p style="font-size: small;">Admin {{items.c_name}}</p><i class="far fa-user-circle fa-2x"><br/></i></a>
         </div>
         <div class="lft">
             <a href="/pages/creators-logout"> <i class="fas fa-sign-out-alt fa-2x"></i></a>
             <a href="#"><i class="far fa-bell fa-2x"></i></a>
-            <a href="#" class="add-send" onclick="ch()"><i class="fa-solid fa-plus fa-2x"></i></a>
+            <button id="show" class="add-send" onclick="ch()"><i class="fa-solid fa-plus fa-2x"></i></button>
         </div>
     </div>
+      
+      <div class="requests">
+          <form action="/pages/updateSubject" method="post" class="form-requests">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">عنوان الطلب</label><br/>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="title"
+                    aria-describedby="emailHelp">
+             </div>  
+             <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">تفاصيل الطلب</label><br/>
+                <textarea type="text-area" class="form-control" name="content" id="exampleInputPassword1"></textarea>
+            </div>
 
+              <input type="text" class="form-control" id="exampleInputEmail1" name="id"
+                    aria-describedby="emailHelp" value="{{items.c_name}}" disabled>
+          </form>
+      </div>
 
 
     <div class="reports">
@@ -190,7 +225,7 @@
             <div class="card-body">
                 <h5 class="card-title" dir="ltr">تقارير الكتب</h5>
                 <p class="card-text" dir="rtl">تحديث مستمر عن حصيلة الكتب و المشاهدة و الاعجاب</p>
-                <a href="#" class="btn btn-primary">هنا</a>
+                <a href="/pages/book-reports" class="btn btn-primary">هنا</a>
             </div>
         </div>
 
@@ -231,10 +266,17 @@
 
 
 <script src="/javascripts/sending.js"></script>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'advlist autolink lists link image charmap preview anchor pagebreak',
+      toolbar_mode: 'floating',
+       width : "300",
+       height: "300"
+    });
+  </script>
 
-
-
-
+<script src="/javascripts/lightMode.js"></script>
 
 {{/if}}
 
