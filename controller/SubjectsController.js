@@ -12,6 +12,7 @@ getUsersSubjects = function(req,res,next){
         if(error){ 
           console.log(error);
         }else{
+          
           res.render('page/turbulence', {title:'الدراسات و المواضيع',items:reuslt});
         }
 
@@ -84,12 +85,13 @@ addSubject = function(req,res,next){
     return;
   }else{
 
-   let Time = new Date();
-  const newSubject = new Subject({
+    let Time = new Date();
+    let TDate = Time.toLocaleDateString();
+    const newSubject = new Subject({
     title:req.body.title,
     pic:req.file.filename,
     content:req.body.content,
-    Date:Time,
+    Date:TDate,
     publisher:req.body.publisher,
     status:false,
     likes:0,
@@ -98,6 +100,7 @@ addSubject = function(req,res,next){
   newSubject.save((error,doc)=>{
     if(error){
       req.flash('error-add','something Wrong, Try later !');
+      console.log(error);
       res.redirect('creators-new-subject');
       return;
     }else{

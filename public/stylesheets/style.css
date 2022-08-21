@@ -203,16 +203,18 @@ h2{
   padding:20px;
   width:150px;
   height:100px;
-  margin-right:100px;
+  margin-left:70px;
   padding-left:45px;
   margin-top: 20px;
 }
 .text p {
   text-align: center;
-  font-size:medium;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  margin:auto;
-  padding-right: 100px;
+  font-family:serif;
+  padding-right:5px;
+  margin-right:50px;
+  width:300px;
+  font-size: large;
+  padding: 10px;
   
 } 
 
@@ -256,7 +258,7 @@ h2{
   padding:20px;
   width:150px;
   height:100px;
-  margin-left:180px;
+  margin-left:150px;
   margin-right:80px;
   padding-left:40px;
   margin-top:5px;
@@ -267,8 +269,10 @@ h2{
   font-size:medium;
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding-left:100px;
-  margin:auto;
-  
+  width:300px;
+  font-size:larger;
+  padding: 10px;
+  margin-left:80px;  
 } 
 
 .section-3{
@@ -394,13 +398,14 @@ footer h5{
 
 .content-details h3{
   color: #1f2168;
-  font-size:5vw;
+  font-size:10vw;
+  font-family: sans-serif;
 }
 
 .content-details p{
   font-size: small;
   font-size:3vw;
-  font-family:Georgia, Times, 'Times New Roman', serif;
+  font-family:serif;
   text-align: right;
 }
 
@@ -411,11 +416,12 @@ footer h5{
 
 }
 .Date-Subject{
-  margin-left:20px;
-  padding-left:50px;
+  margin-right:50px;
+  padding-left:300px;
   padding-bottom:10px;
   border-bottom: #03020a solid 1px;
   width:350px;
+
   font-size: x-small;
 }
 
@@ -705,16 +711,15 @@ box-shadow:none;
 }
 
 .Sub-frame{
-margin: 10px;
+margin:10px;
 height:250px;
-width:220px;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+width:265px;
 margin-left:80px;
 
 }
 
 .Sub-frame:hover{
-box-shadow:none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
 #Main-Card{
@@ -742,7 +747,7 @@ color: #090b81;
 }
 
 .Sub-title{
-margin-left:50px;
+margin-left:90px;
 margin-top:15px;
 }
 
@@ -754,7 +759,7 @@ margin-top:15px;
 #link-sub{
 text-decoration: none;
 margin-left:50px;
-margin-top:15px;
+margin-top:5px;
 color: #181943;
 
 
@@ -762,12 +767,16 @@ color: #181943;
 
 #link-sub p {
 text-decoration: none;
-margin-left:100px;
-margin-top:15px;
+margin-left:40px;
+margin-top:5px;
 margin-bottom: 10px;
 
 color: #0e0965;
-
+background-color: rgba(213, 203, 6, 0.159);
+border-radius:50px;
+border: #a50f2d;
+border-width:10px;
+padding-left:65px;
 }
 
 
@@ -1246,7 +1255,6 @@ li a:hover{
     margin: 10px;
     height:auto;
     width:220px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   }
 
@@ -1265,20 +1273,19 @@ li a:hover{
 
   }
   .cs-frame:hover{
-    box-shadow:none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   }
 
   .Sub-frame{
     margin: 10px;
-    height:250px;
+    margin-bottom:100px;
+    height:265px;
     width:220px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
   }
 
   .Sub-frame:hover{
-    box-shadow:none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   }
   #Main-Card{
@@ -1308,13 +1315,12 @@ li a:hover{
   }
 
   .Sub-title{
-    margin-left:50px;
+    margin-left:90px;
     margin-top:15px;
   }
 
   .Sub-title a{
     margin-left:80px;
-    margin-top:15px;
   }
 
 
@@ -1329,12 +1335,19 @@ li a:hover{
 
   #link-sub p {
     text-decoration: none;
-    margin-left:100px;
-    margin-top:15px;
+    margin-left:85px;
+    margin-top:1px;
     margin-bottom: 10px;
 
     color: #0e0965;
-    
+    border-radius: 30px;
+    border: rgba(213, 203, 6, 0.159);
+    border-width: 200px;
+    width:55px;
+    height: 50px;
+    padding-left:20px;
+    padding-top:10px;
+    padding-right:10px;
   }
 
   
@@ -1378,7 +1391,15 @@ li a:hover{
     margin-bottom: 10px;
 
     color: #090b81;
-    
+    border-radius: 30px;
+    border: rgba(213, 203, 6, 0.159);
+    border-width: 200px;
+    width:55px;
+    height: 50px;
+    padding-left:20px;
+    padding-top:10px;
+    padding-right:10px;
+  
   }
 
   .col img{
@@ -1835,12 +1856,15 @@ textarea{
 .Author-Subject{
   margin-left:680px;
   font-size: small;
-
+  padding-left:200px;
+  padding-bottom:30px;
+  border-bottom: #03020a solid 1px;
+  width:320px;
 
 }
 .Date-Subject{
   margin-left:485px;
-  padding-left:100px;
+  padding-left:390px;
   padding-bottom:30px;
   border-bottom: #03020a solid 1px;
   width:550px;

@@ -12,8 +12,8 @@ exports.SubjecAdd =
         }
         return true;
     }),
-    check("content").not().isEmpty().escape().withMessage("الرجاء ادخال المحتوى"),
-    check("content").not().escape().isAlpha('a-zA-Z'['ar']).withMessage("الرجاء ادخل المحتوى باللغة العربية  "),
+    check("content").not().isEmpty().withMessage("الرجاء ادخال المحتوى"),
+    check("content").not().isAlpha('a-zA-Z'['ar']).withMessage("الرجاء ادخل المحتوى باللغة العربية  "),
     (req,res,next)=>{
         const Errors = validationResult(req);
         if(!Errors.isEmpty()){

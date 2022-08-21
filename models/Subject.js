@@ -18,7 +18,7 @@ const SubjectSchema = mongoose.Schema({
     },
 
     Date:{
-        type:Date,
+        type:String,
         required:true
     },
 

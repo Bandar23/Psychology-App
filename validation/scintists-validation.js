@@ -12,7 +12,7 @@ exports.Validation =
         }
         return true;
     }),
-    check("content").not().isEmpty().escape().withMessage("رجاء ادخل نبذة عن العالم "),
+    check("content").not().isEmpty().withMessage("رجاء ادخل نبذة عن العالم "),
     check("content").not().isAlpha('a-zA-Z'['ar']).withMessage('رجاء أدخل النبذة باللغة العربية'),
     (req,res,next)=>{
         const Errors = validationResult(req);
