@@ -8,7 +8,7 @@ const expressSession   = require('express-session');
 const MongoStore = require('connect-mongo')(expressSession);
 const flash = require('connect-flash');
 const passport = require('passport');
-const aos = require('aos')
+const aos = require('aos');
 const bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 
@@ -20,6 +20,7 @@ const { session } = require('passport');
 var app = express();
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
+
 
 
 
@@ -41,7 +42,6 @@ mongoose.connect(
 require('./config/passport');
 
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -57,12 +57,12 @@ app.use(expressSession({
   resave:true,
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
-    ttl: 1 * 24 * 60 * 60, // = 14 days. ttl means "time to live" (expiration in seconds)}
+    ttl: 1 * 24 * 60 * 60, 
 }),
   cookie: {
     secure: false,  
-    httpOnly: false, // if true, will disallow JavaScript from reading cookie data
-    expires: new Date(Date.now() + 60 * 60 * 1000) // 1 hour;
+    httpOnly: false, 
+    expires: new Date(Date.now() + 60 * 60 * 1000) 
   }
 }));
 
@@ -77,18 +77,14 @@ app.use('/',indexRouter);
 app.use('/pages',pagesRouter);
 
 
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
  
-// error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });

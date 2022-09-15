@@ -146,7 +146,7 @@ updateBook = function(req,res,next){
           pages:req.body.pages,
           b_date:req.body.b_date,
           prief:req.body.brife
-
+        
         }
 
       Book.updateOne({_id:id},{$set:BookUpdate},(error,doc)=>{
@@ -159,7 +159,6 @@ updateBook = function(req,res,next){
       }
 
     });
-
   }
 
  Approve = function(req,res,next){
