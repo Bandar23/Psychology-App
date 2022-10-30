@@ -85,9 +85,18 @@
 
 nav {
 display:inline;
+}
 
+.standard-C{
+  margin: 20px;
+}
+#standard-T{
+  margin-left:150px;
+  color: #0e0965;
+}
 
-
+#standard-D{
+ font-size: small;
 
 }
 nav ul{

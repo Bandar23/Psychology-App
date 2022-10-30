@@ -18,7 +18,7 @@ getUsersSubjects = function(req,res,next){
 
     })
 } 
-
+   
 getDetaliesSubject = function(req,res,next){
   Subject.find({_id:req.params.info},(error,doc)=>{
     if(error){ 

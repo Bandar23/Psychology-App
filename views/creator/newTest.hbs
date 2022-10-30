@@ -1,0 +1,93 @@
+<meta charset="UTF-8">
+
+<div>
+    <div class="nav-admin">
+        <div class="rit">
+           <a href="/pages/creators-profile"><p>{{creator}}</p><i class="far fa-user-circle fa-2x"><br/></i></a>
+        </div>
+        <div class="lft">
+            <a href="/pages/creators-logout"> <i class="fas fa-sign-out-alt fa-2x"></i></a>
+            <a href="#"><i class="far fa-bell fa-2x"></i></a>
+            <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
+        </div>
+    </div>
+    <div class="newBook-form">
+
+         {{#each error}}
+                <ul class="erroaddBook">
+                    <li>{{this}}</li>
+                </ul>
+         {{/each}}
+
+          {{#each done}}
+                <ul class="done">
+                    <li style="color:green;">{{this}}</li>
+                </ul>
+         {{/each}}
+        <h3> إضافة مقيياس جديد</h3>
+
+                
+        <form action="newTest" method="post">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">المقيياس</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="title"
+                    aria-describedby="emailHelp" value="">
+            </div>
+            
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">جمل رئيسيةعن الاختبار </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="header"
+                    aria-describedby="emailHelp" value="">
+            </div>
+
+
+             <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" dir="rtl">نبذة عن المقيياس</label>
+                <textarea type="text-area" class="form-control" dir="rtl" name="info" id="exampleInputPassword1"
+                    value="" rows="50" cols="20"></textarea>
+            </div>
+
+              <input type="text" class="form-control" id="exampleInputEmail1" name="publisher"
+                    aria-describedby="emailHelp" value="{{creator}}"><br/>
+
+
+            <button type="submit" class="btn btn-primary">إضافة</button>
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="left-sid">
+        <ul>
+            <li><a href="/pages/creators-main" dir="rtl"><b>لوحة التحكم</b><img src="../../images/dashboard.png"></a>
+            </li>
+            <li> <a href="/pages/creators-profile" dir="rtl"><b>بياناتي</b><br /><img src="../../images/resume.png"></a>
+            </li>
+            <li><a href="/pages/creators-scientists" dir="rtl"><b>الشخصيات</b><br /><img src="../../images/design-thinking.png"></a></li>
+            <li><a href="#" dir="rtl"><b>الدراسات</b><br /><img src="../../images/creative.png"></a></li>
+            <li> <li><a href="/pages/creators-book" dir="rtl"><b>الكتب</b><br /><img src="../../images/book.png"></a></li>
+        </ul>
+    </div>
+
+     <div class="footer-creator">
+        <div class="rit">
+            <a href="/pages/creators-profile">
+            </a>
+        </div>
+        <div class="lft">
+            <a href="/pages/creators-book"><i class="fa-solid fa-book fa-2x"></i></a>
+            <a href="/pages/creators-scientists"><i class="fa-solid fa-file-contract fa-2x"></i></a>
+            <a href="/pages/creators-scientists"><i class="fa-solid fa-users fa-2x"></i></a>
+            <a href="/pages/creators-main" class="add-send"><i class="fa-solid fa-table-columns fa-2x"></i></a>
+        </div>
+    </div>
+
+
+</div>

@@ -19,6 +19,7 @@ const ControllerCreator    = require('../controller/creators_controller');
 const ControllerSubject    = require("../controller/SubjectsController");
 const ControllerScientists = require("../controller/ScientstsController");
 const ControllerRequests   = require('../controller/request_controller');
+const ControllerExams      = require('../controller/examController');
 const passport = require('passport');
 let multer     = require('multer');
 
@@ -118,7 +119,22 @@ next();
     successRedirect:'creators-main',
     failureRedirect:'creators-login',
     failureFlash: true
+}));      
+
+router.get('/standards',ControllerExams.getUserTests);
+router.get('/standard/:title',ControllerExams.getUserStandar);
+
+
+router.get('/addTest',((req,res,next)=>{
+  let user = req.user.c_name;
+  let masseagError = req.flash('error-Exams');
+  let masseagDone  = req.flash('Done-Exams');
+
+  res.render('creator/newTest',{title:'Test',toLogin:true,creator:user,error:masseagError,done:masseagDone});
+
 }));
+
+router.post('/newTest',isSingin,ControllerExams.addTest);
 
 
 router.get('/creators-main',isSingin,((req,res,next)=>{
