@@ -848,6 +848,22 @@ color: #090b81;
    margin:50px;
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+#card-standaer{
+  width:300px;
+  display:block;
+  background-color: white;
+  height:200px;
+  margin: 10px 0px 10px 100px;
+}
+#card-standaer:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#body-standaer{
+width:100%;
+background-color: white;
+
+}
 
 
 
@@ -2006,6 +2022,34 @@ margin-right:50px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
+
+#body-standaer,#card-title-standaer,#text-standaer{
+  text-align:center;
+
+
+}
+
+
+
+#card-standaer{
+  width:255px;
+  display:inline-block;
+  background-color: white;
+  vertical-align: bottom top;
+  height:200px;
+  margin-bottom: 10px;
+}
+#card-standaer:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#body-standaer{
+width:100%;
+background-color: white;
+
+}
+
+
 
 }
 
