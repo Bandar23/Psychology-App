@@ -9,10 +9,10 @@ const UserValidauion       = require('../validation/user-Validation');
 const RequestValidation    = require('../validation/req-validation');
 
 
-const Book       = require('../models/book');
-const Scientists = require('../models/scientists');
-const Creator    =  require('../models/creators');
-const Subject    = require('../models/Subject');
+const Book                 = require('../models/book');
+const Scientists           = require('../models/scientists');
+const Creator              =  require('../models/creators');
+const Subject              = require('../models/Subject');
 
 const ControllerBook       = require('../controller/book_controller');
 const ControllerCreator    = require('../controller/creators_controller');
@@ -20,6 +20,7 @@ const ControllerSubject    = require("../controller/SubjectsController");
 const ControllerScientists = require("../controller/ScientstsController");
 const ControllerRequests   = require('../controller/request_controller');
 const ControllerExams      = require('../controller/examController');
+const ControllerStandar    = require('../controller/standarsController');
 const passport = require('passport');
 let multer     = require('multer');
 
@@ -135,9 +136,13 @@ router.get('/addTest',((req,res,next)=>{
 }));
 
 router.post('/newTest',isSingin,ControllerExams.addTest);
+router.post('/Test',ControllerStandar.newTest);
+
+    
 
 
-router.get('/creators-main',isSingin,((req,res,next)=>{
+
+router.get('/creators-main',isSingin,((req,res,next)=>{    
   let masseagError = req.flash('error-req');
 
   Creator.findById({_id:req.user.id},(error,result)=>{

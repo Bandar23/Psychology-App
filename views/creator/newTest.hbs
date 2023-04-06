@@ -27,25 +27,59 @@
         <h3> إضافة مقيياس جديد</h3>
 
                 
-        <form action="newTest" method="post">
+        <form action="Test" method="post">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label" dir="rtl">المقيياس</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" name="title"
                     aria-describedby="emailHelp" value="">
             </div>
+
             
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label" dir="rtl">جمل رئيسيةعن الاختبار </label>
                 <input type="text" class="form-control" id="exampleInputEmail1" name="header"
                     aria-describedby="emailHelp" value="">
             </div>
-
-
              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label" dir="rtl">نبذة عن المقيياس</label>
-                <textarea type="text-area" class="form-control" dir="rtl" name="info" id="exampleInputPassword1"
-                    value="" rows="50" cols="20"></textarea>
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">السؤال الاول</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="q"
+                    aria-describedby="emailHelp" value="">
             </div>
+
+            
+ <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">السؤال الثاني</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="q"
+                    aria-describedby="emailHelp" value="">
+            </div>
+
+            
+    <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">الجواب الأول</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="answer"
+                    aria-describedby="emailHelp" value="">
+            </div>
+            
+
+    <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">الجواب الثاني</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="answer"
+                    aria-describedby="emailHelp" value="">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">قيمة الجواب الأول</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="val1"
+                    aria-describedby="emailHelp" value="">
+            </div>
+
+ <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" dir="rtl">قيمة الجواب الثاني</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="val2"
+                    aria-describedby="emailHelp" value="">
+            </div>
+
+          
+
 
               <input type="text" class="form-control" id="exampleInputEmail1" name="publisher"
                     aria-describedby="emailHelp" value="{{creator}}"><br/>

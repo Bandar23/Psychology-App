@@ -20,13 +20,13 @@ const { session } = require('passport');
 var app = express();
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
+  
 
 
 
-
-mongoose.connect(
+mongoose.connect(    
   process.env.MONGODB_URI ||'mongodb://localhost:/Psychology_App',
-  { 
+  {
     useNewUrlParser:true
   },(err)=>{
 
@@ -35,12 +35,11 @@ mongoose.connect(
   }else{
     console.log('DB Conected ..');
 
-  }
+  }          
 
 });
 
 require('./config/passport');
-
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -48,7 +47,7 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(express.json({limit: "10mb", extended: true}));
 app.use(express.urlencoded({limit: "10mb", extended: true, parameterLimit: 50000}));
-app.use(cookieParser());
+app.use(cookieParser());     
 
 app.use(expressSession({
   secret:'Psychology@App',

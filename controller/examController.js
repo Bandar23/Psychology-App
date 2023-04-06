@@ -8,10 +8,8 @@ const { session } = require('passport');
 addTest = function(req,res,next){
 
     const newExam = new Exam({
-        title:req.body.title,
-        info:req.body.info,
-        header:req.body.header,
-        publisher:req.body.publisher
+        Qus:req.body. Qus,
+        answers:req.body.publisher
     });
 
     newExam.save((error,doc)=>{
